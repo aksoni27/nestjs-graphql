@@ -1,0 +1,44 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Book {
+  id: Int!
+  title: String!
+  price: Int
+}
+
+type Query {
+  index: String!
+  securedAdminData: String!
+  securedNormalUserData: String!
+  login(emailId: String!, password: String!): String!
+  books: [Book!]!
+  bookById(bookId: Int!): Book
+}
+
+type Mutation {
+  registerUser(addUserArgs: AddUserArgs!): String!
+  updateBook(updateBookArgs: UpdateBookArgs!): String!
+  addBook(addBookArgs: AddBookArgs!): String!
+  deleteBook(bookId: Int!): String!
+}
+
+input AddUserArgs {
+  email: String!
+  password: String!
+  firstName: String!
+  lastName: String!
+  role: String!
+}
+
+input UpdateBookArgs {
+  id: Int!
+  title: String!
+  price: Int!
+}
+
+input AddBookArgs {
+  title: String!
+  price: Int!
+}
